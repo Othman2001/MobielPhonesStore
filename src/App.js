@@ -1,4 +1,4 @@
-import './App.css';
+
 import MainScreen from './pages/MainScreen'
 import {
   BrowserRouter as Router,

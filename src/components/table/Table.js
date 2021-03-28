@@ -8,14 +8,12 @@ import Table from 'react-bootstrap/Table'
    const [phone , setPhone] = useState(phones)
 //simple function helps me to reander tabel dynmicly 
 const handleRowClick = (id)=>{
-    console.log(id)
-renderInfo(id);
+    renderInfo(id);
 }
-
 
 const renderTable = (phones,index )=>{
     return(
-        <tr  key = {index} onclick = {handleRowClick(phones.id)} >  
+        <tr  key = {index} onClick = {()=>handleRowClick(phones.id)} >  
             <td> {phones.Brand} </td>
             <td> {phones.Mode} </td>
             <td> {phones.Year} </td>
@@ -28,7 +26,7 @@ const renderTable = (phones,index )=>{
 
 //problem Number 1: we need to pass the id of every row to 
     return(
-<Table  striped bordered hover size="sm"  className = "table" >
+<Table  striped bordered hover size="sm"  className = "table"  variant="dark">
  <thead>
      {/* all table Headers */}
      <th> Brand </th>

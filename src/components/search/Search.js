@@ -1,17 +1,17 @@
 import {useState} from 'react'
-
+import "./search.css"
 const Search = ()=>{
     const [data , setData] = useState("");
   
     const inputEvent = (event) =>{
         const searchInput = event.target.value;
-        console.log(searchInput);
+      
         setData(searchInput)
     }
 
     return(
         <form className = "searchbar">
-            <input type="text" placeholder = "Search AnyTHING" value={data} onChange={inputEvent}/>
+         <input type="text" value = "Search" className ="searchbar-input" />
             
         </form>
     )

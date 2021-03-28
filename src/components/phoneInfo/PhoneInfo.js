@@ -1,9 +1,26 @@
-const PhoneInfo = ({id})=>{
+import {connect} from 'react-redux'
+import './phoneinfo.css';
+const PhoneInfo = ({id , phones})=>{
+ let phone = phones?.filter(pho=>pho.id ==id);
+ console.log(phone , "idea")
     return(
         <div>
-            {id}
-   <h1> ehhh!!!!s </h1>
+         {phone.map((ph , index)=>{
+             return(
+                 <div key = {index}>
+                     <h1> {ph.Brand} </h1>
+                     <h5> {`model name:  `}  <span> {ph.Mode} </span> </h5>
+                     <img className="phoneinfo-imag"  src={ph.image}/>
+                     </div>
+             )
+         })}
+
         </div>
     )
 }
-export default PhoneInfo
+const mapStateToProps = state=>{
+    return{
+        phones:state.phone.phones
+    }
+}
+export default connect(mapStateToProps)(PhoneInfo)

@@ -1,3 +1,17 @@
 .phoneinfo-imag{
-max-width: 350px!important;
+width: 190px !important;
+}
+.phone{
+    background-image: linear-gradient(to right top, #d8add3, #dcb4d4, #e0bbd5, #e3c3d7, #e5cad9);
+     padding-left: 13px;
+}
+
+.phone-title{
+
+}
+.phone-image{
+    border-right: 2px solid black !important;
+}
+.phone-data{
+    margin-left: 30px;
 }

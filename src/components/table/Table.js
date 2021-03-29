@@ -4,28 +4,30 @@ import {connect} from 'react-redux'
 import Table from 'react-bootstrap/Table'
 // table component 
  const Tables = ({phones, renderInfo})=>{
-     //moving props to state
-   const [phone , setPhone] = useState(phones)
-//simple function helps me to reander tabel dynmicly 
+const [product ,setProduct] = useState(phones)
+   const [searchTerm , setSearchTerm] = useState("")
+   //simple function helps me to reander tabel dynmicly 
 const handleRowClick = (id)=>{
     renderInfo(id);
 }
 
-const renderTable = (phones,index )=>{
+const renderTable = (product,index,filter )=>{
     return(
-        <tr  key = {index} onClick = {()=>handleRowClick(phones.id)} >  
-            <td> {phones.Brand} </td>
-            <td> {phones.Mode} </td>
-            <td> {phones.Year} </td>
+        <tr  key = {index} onClick = {()=>handleRowClick(product.id)} >  
+            <td> {product.Brand} </td>
+            <td> {product.Mode} </td>
+            <td> {product.Year} </td>
         </tr>
     )
 }
-// end the function to
 
-//start component logic
-
-//problem Number 1: we need to pass the id of every row to 
+const handleChange = (e)=>{
+    e.preventDefault()
+    setSearchTerm(e.target.value)
+}
     return(
+        <div>
+<input type = "text" placeholder = "Searcher here by Brand" value = {searchTerm} className = "table-search"  onChange = {handleChange} />
 <Table  striped bordered hover size="sm"  className = "table"  variant="dark">
  <thead>
      {/* all table Headers */}
@@ -35,9 +37,11 @@ const renderTable = (phones,index )=>{
  </thead>
  <tbody>
      {/* calling the render table function */}
-  {phone.map(renderTable)}
+  {phones.filter((i)=>{return  i.Brand?.match(searchTerm)}).map(renderTable)}
      </tbody>
 </Table>
+</div>
+
     )
 }
 // mapping state from redu

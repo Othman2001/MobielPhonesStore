@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.table-search{
+  width: 300px;
+  padding: 7px 5px 10px 10px;
+  position: relative;
+  left: 50px !important;
+  margin: 20px;
+  border-radius: 30px;
+  border: none;
+}

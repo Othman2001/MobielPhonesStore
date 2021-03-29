@@ -9,15 +9,7 @@ import PieChart from '../components/pie/Pie'
 const MainScreen = ()=>{
 const [id ,setId ] =  useState(null)
 
-// data passed to bar chart
-const data = [ 
-    {year: 2002 , mobielCount:11, sales:"3666" },
-    {year: 2003 , mobielCount:223, sales:"3222"},
-    {year: 2005 , mobielCount:1123 , sales:"2113",  },
-    {year: 2006 , mobielCount:555 , sales:"2221"},
-    {year: 2007 , mobielCount:233  , sales:"1212"},
 
-]
 
 // const PieData = [
 //     {name: 'Apple',percent: 30 , color: '#E7BD2C'},
@@ -41,7 +33,7 @@ const data = [
     <PhoneInfo id = {id} />
     </Col>
     <Col lg = {6}  sm = {12} >
-    <BarChart data = {data}/>
+    <BarChart />
    <PieChart/>
     </Col>
  </Row>
